@@ -2,7 +2,7 @@
 
 namespace Actividad3LegnProg3.Controllers
 {
-    public class EstudiantesController1 : Controller
+    public class EstudiantesController : Controller
     {
         public IActionResult Index()
         {

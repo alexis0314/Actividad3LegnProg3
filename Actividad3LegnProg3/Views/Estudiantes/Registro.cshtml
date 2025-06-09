@@ -1,0 +1,25 @@
+﻿@model EstudianteViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h2>Registro de estudiante</h2>
+<from asp-action="Registra" method="post">
+    <div>
+        <label asp-for="Nombrecompleto"></label>
+        <input asp-for="Nombrecompleto" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Matricula"> </label>
+        <input asp-for="Matricula" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Carrera"></label>
+        <input asp-for="Carrera" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="CorreoInsttitucional"></label>
+        <input asp-for="CorreoInsttitucional" class="form-control" />
+    </div>
+</from>

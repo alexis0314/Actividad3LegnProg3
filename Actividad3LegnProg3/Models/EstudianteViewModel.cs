@@ -1,6 +1,6 @@
 ﻿namespace Actividad3LegnProg3.Models
 {
-    public class UsuarioViewModel
+    public class EstudianteViewModel
     {
         public string Nombrecompleto { get; set; }
         public string Matricula { get; set; }
