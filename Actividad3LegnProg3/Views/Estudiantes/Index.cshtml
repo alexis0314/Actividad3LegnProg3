@@ -5,12 +5,11 @@
 @{
 }
 <style>
-    
-    body{
+
+    body {
         background-image: url('/Alex.jpg');
         background-size: cover;
         font-family: Arial, sans-serif;
-    
     }
 
 </style>
@@ -56,12 +55,14 @@
         <span asp-validation-for="Genero" class="text-danger"></span>
     </div>
     <div>
+    
         <label asp-for="Turno"></label>
-        <select asp-for="Turno"class="form-control">
-        <option value="">Selecione</option>
-        <option>Matutino</option>
-        <option>Vespertino</option> 
+        <select asp-for="Turno" class="form-control">
+            <option value="">Selecione</option>
+            <option>Matutino</option>
+            <option>Vespertino</option>
         </select>
+        <span asp-validation-for="Turno" class="text-danger"></span>
         <span asp-validation-for="Turno" class="text-danger"></span>
     </div>
     <div>
@@ -80,12 +81,16 @@
     </div>
     <div>
         <label asp-for="Terminoycondiciones"> Acepto los termino y condiciones</label>
-        <input asp-for="Terminoycondiciones" type="checkbox"/>
+        <input asp-for="Terminoycondiciones" type="checkbox" />
         <span asp-validation-for="Terminoycondiciones" class="text-danger"></span>
     </div>
-    <button class="btn btn-success" type="submit">Enviar</button>
+    <div class="row">
+        <div class="col=6">
+            <br />
+            <button class="btn btn-success" type="submit">Registra</button>
+            <a href="/Estudiantes/Lista" class="bnt bnt=Secodary">Ir a la Lista</a>
+        </div>
+    </div>
+    
 </form>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
