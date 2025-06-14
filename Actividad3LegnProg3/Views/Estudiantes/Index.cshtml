@@ -1,4 +1,4 @@
-﻿@model EstudianteViewModel
+﻿@model Actividad3LegnProg3.Models.EstudianteViewModel
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -7,7 +7,7 @@
 <style>
 
     body {
-        background-image: url('/Alex.jpg');
+        background-image: url('/img.jpg');
         background-size: cover;
         font-family: Arial, sans-serif;
     }
@@ -15,7 +15,10 @@
 </style>
 
 <h2>Registro de estudiante</h2>
-
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["Mensaje"]</div>
+}
 <form asp-action="Registro" method="Post">
 
     <div>
@@ -31,7 +34,11 @@
 
     <div>
         <label asp-for="Carrera"></label>
-        <input asp-for="Carrera" class="form-control" />
+        <select asp-for="Carrera" class="form-control">
+            <option value="">Selecione</option>
+            <option>Ingeniería en Software</option>
+            <option>Contabilidad</option>
+        </select>
         <span asp-validation-for="Carrera" class="text-danger"></span>
     </div>
     <div>
@@ -63,7 +70,6 @@
             <option>Vespertino</option>
         </select>
         <span asp-validation-for="Turno" class="text-danger"></span>
-        <span asp-validation-for="Turno" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Tipodeingreso"></label>
@@ -71,26 +77,30 @@
     </div>
     <div>
         <label asp-for="Estabecado"></label>
-        <input asp-for="Estabecado" class="form-control" />
+        <input asp-for="Estabecado" type="checkbox" />
+        <span asp-validation-for="Estabecado" class="text-danger"></span>
 
     </div>
     <div>
         <label asp-for="Porcentajedebeca"></label>
-        <input asp-for="Porcentajedebeca" class="form-control" />
+        <input asp-for="Porcentajedebeca" class="form-control" type="number" min="0" max="100" />
         <span asp-validation-for="Porcentajedebeca" class="text-danger"></span>
     </div>
     <div>
-        <label asp-for="Terminoycondiciones"> Acepto los termino y condiciones</label>
-        <input asp-for="Terminoycondiciones" type="checkbox" />
-        <span asp-validation-for="Terminoycondiciones" class="text-danger"></span>
+        <label asp-for="Terminosycondiciones"> Acepto los termino y condiciones</label>
+        <input asp-for="Terminosycondiciones" type="checkbox" />
+        <span asp-validation-for="Terminosycondiciones" class="text-danger"></span>
     </div>
     <div class="row">
         <div class="col=6">
             <br />
             <button class="btn btn-success" type="submit">Registra</button>
-            <a href="/Estudiantes/Lista" class="bnt bnt=Secodary">Ir a la Lista</a>
+            <a href="/Estudiantes/Lista" class="bnt bnt=Secondary">Ir a la Lista</a>
         </div>
     </div>
     
 </form>
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

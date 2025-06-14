@@ -42,8 +42,9 @@ namespace Actividad3LegnProg3.Models
         [Range(0, 100, ErrorMessage = "El porcentaje de beca debe estar entre 0 y 100")]
         public int? Porcentajedebeca { get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Debe aceptar los términos y condiciones")]
-        public bool Terminoycondiciones { get; set; }
+        [Required(ErrorMessage = "Debe aceptar los términos y condiciones")]
+        [Display(Name= "Terminosycondiciones")]
+        public bool Terminosycondiciones { get; set; }
     }
 }
 
